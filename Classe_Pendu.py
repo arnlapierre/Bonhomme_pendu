@@ -1,4 +1,4 @@
-from mot_aléatoire_pendu import mot_aléatoire
+from difficulté import mot_aléatoire
 import unidecode
 
 
