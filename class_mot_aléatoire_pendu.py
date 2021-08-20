@@ -46,6 +46,6 @@ class MotAleatoire:
             if freq_lt:
                 df = self.freq_films_lower_than(freq_lt, df)
 
-        if len(df) == 0:
-            return "Aucun mot ne correspond à ces critères de recherche."
+        # if len(df) == 0:
+            # return "Aucun mot ne correspond à ces critères de recherche."
         return choice(list(df.orthographe))
