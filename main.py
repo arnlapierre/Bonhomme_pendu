@@ -1,17 +1,16 @@
 """Ce fichier contient les deux fonctions suivantes:
 une fonction qui implante le fonctionnement du jeu en altérant
 l'état de jeu
-et une fonction argparse qui implante des commandes au terminal.
 """
 import unidecode  # permet de retourner un string sans les accents.
-import difficulté
+from difficulté import generer_mot
 
 print("Bonhomme Pendu")
 Difficulté = int(input("Entrez le niveau de difficulté auquel vous désirez jouer :\n"
                        "1 - Très facile\n2 - Facile\n3 - Normal\n4 - Difficile\n5 - Très difficile\n"))
 
 state = Difficulté
-# mot = mot_aléatoire(difficulté=Difficulté)
+mot = generer_mot(difficulté=Difficulté)
 
 
 def potence_ascii(état):
@@ -45,8 +44,7 @@ def jeu_bonhomme_pendu(mot):
     """
     global state
 
-    # TODO gérer les espaces (a capella p.ex) et les accents
-    # TODO niveaux de difficulté avec le nombre de lettres (0-5), (5-10), (10-15), (15-20), (20,25)
+    # TODO gérer les espaces (a capella p.ex)
     mot = mot.lower()  # mettre le mot en minuscule
     mot_sans_accents = unidecode.unidecode(mot)  # avoir une copie du mot sans les accents
     sep = " "
@@ -83,6 +81,5 @@ def jeu_bonhomme_pendu(mot):
 
         print(f"Lettres tentées : {affichage_tentatives}")
         print(f"Mot à trouver : {affichage_mot}")
-
 
 
